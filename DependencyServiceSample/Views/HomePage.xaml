@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DependencyServiceSample.Views.HomePage"
+               xmlns:effects="clr-namespace:DependencyServiceSample.Effects"
+             Title="{Binding Title}"
+             BackgroundColor="#0c0b0b">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout  Padding="15">
+                <Image Source="logo.png" VerticalOptions="Start" Margin="50,0,50,0"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Entry x:Name="User" Placeholder="Email" 
+                           ClearButtonVisibility="WhileEditing" Grid.Row="0"
+                           PlaceholderColor="#e74c32" 
+                           TextColor="White" >
+                        <Entry.Effects>
+                            <effects:FocusEntryEffect/>
+                        </Entry.Effects>
+                    </Entry>
+                    <Entry x:Name="Pass" Placeholder="Password" IsPassword="True" 
+                           ClearButtonVisibility="WhileEditing" Grid.Row="1"
+                           PlaceholderColor="#e74c32" 
+                           TextColor="White" 
+                           Keyboard="Numeric">
+                        <Entry.Effects>
+                            <effects:FocusEntryEffect/>
+                        </Entry.Effects>
+                    </Entry>
+                    <Button x:Name="Login" Text="Login" 
+                            TextColor="#e6ece2" 
+                            FontAttributes="Bold"
+                            VerticalOptions="Center"
+                            WidthRequest="100" 
+                            BackgroundColor="#e74c32"
+                            BorderWidth="1.5"
+                            CornerRadius="50" 
+                            Grid.Row="2"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
